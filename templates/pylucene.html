@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico">
+    <link rel="icon" href="http://obj-cache.cloud.ruanbekker.com/favicon.ico">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Music Search Engine</title>
+    <style>
+        table.no-spacing {
+        border-spacing:0; /* Removes the cell spacing via CSS */
+        border-collapse: collapse;  /* Optional - if you don't want to have double border where cells touch */
+}
+        tr.hide_all > td, td.hide_all{
+        border-style:hidden;
+      }
+      .blank_row
+    {
+    height: 15px !important; /* overwrites any other rules */
+    background-color: #FFFFFF;
+    }
+       </style>
+
+       <style> 
+        .jumbotron{
+          height:auto;
+          padding:20px 0 !important;
+   }
+        </style>
+  </head>
+  <body style="
+  background: rgb(238,174,202);
+background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+  ">
+  
+  <div class="container">
+    <div style="background:transparent !important" class="jumbotron">
+      <div style="font-family: 'Tangerine', serif;">
+        <p>
+          <center>
+          <font size="8">Music Search Engine</font>
+          </center>
+        </p>
+      </div>
+       <div class="row">
+     </div>
+    </div>
+
+    <form action="/" method="post">
+        <div>
+          <input type="text" style="border-radius: 10px;" class="form-control input-lg" name="input" placeholder="Search" autofocus>
+          <br>
+          <div style="text-align: center;">
+            <button class="btn btn-success btn-lg" type="submit" formaction="bert">
+              <i class="glyphicon glyphicon-search"></i>
+              Bert Search
+            </button>
+            <button class="btn btn-success btn-lg" type="submit" formaction="pylucene">
+              <i class="glyphicon glyphicon-search"></i>
+              Pylucene Search
+            </button>
+          </div>
+        </div>
+      </form>
+
+  <center>
+      <h1>Results </h1>
+  </center>
+
+  <table class="no-spacing" cellpadding=0 cellspacing=0>
+    <!-- <thead>
+      <tr>
+        <th>Date Stamp</th>
+        <th>Title</th>
+        <th>Abstract</th>
+        <th>Publication number</th>
+        <th>Inventors</th>
+      </tr>
+    </thead> -->
+
+{% for hit in res %}
+    <tbody>
+        <tr class="blank_row">
+        </tr>
+      <!-- <tr class="hide_all">
+        <td colspan="100"><a href="{{ hit['artist'] }}" target = "_blank">{{ hit['title'] }}</td></a></td>
+        </tr> -->
+        <tr class="hide_all">
+        <td style="font-size: 20px;" ><p style="font-weight: bold;">Artist - {{ hit['artist'] }} </p></td>
+        </tr>
+        <tr class="hide_all">
+        <td colspan="100" style="font-size: 20px;"> <p> <q style="font-weight: bold;">Lyrics - </q>{{ hit['lyrics'] }} </p></td>
+        </tr>
+        <tr class="hide_all">
+          <td colspan="100" style="font-size: 20px;"> <p><q style="font-weight: bold;">Ttile - </q>{{ hit['title'] }} </p></td>
+        </tr>
+        <tr class="hide_all">
+          <td colspan="100" style="font-size: 20px;"> <p><q style="font-weight: bold;">URL - </q><a href>{{ hit['url'] }}</a> </p></td>
+        </tr> 
+        <tr class="hide_all">
+          <td colspan="100" style="font-size: 20px;"> <p><q style="font-weight: bold;">Similarity Score - </q> {{ res1[loop.index -1] }}</p></td>
+        </tr>
+    </tbody>     
+{% endfor %}
+  </table>
+
+      </div>
+    
+     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

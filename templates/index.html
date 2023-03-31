@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico">
+  <link rel="icon" href="http://obj-cache.cloud.ruanbekker.com/favicon.ico">
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+
+  <title>Music Search Engine</title>
+  <style>
+    .jumbotron{
+        height:auto;
+        padding:20px 0 !important;
+ }
+</style>
+</head>
+<body 
+style="
+  background: rgb(238,174,202);
+background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+  "
+>
+
+  <div class="container">
+    <div style="background:transparent" class="jumbotron">
+        <div style="font-family: 'Tangerine', serif;">
+        <p>
+          <center>
+          <font size="8">Music Search Engine</font>
+          </center>
+        </p>
+      </div>
+    </div>
+
+    <form action="/" method="post">
+      <div>
+        <input type="text" style="border-radius: 10px;" class="form-control input-lg" name="input" placeholder="Search" autofocus>
+        <br>
+        <div style="text-align: center;">
+          <button class="btn btn-success btn-lg" type="submit" formaction="bert">
+            <i class="glyphicon glyphicon-search"></i>
+            Bert Search
+          </button>
+          <button class="btn btn-success btn-lg" type="submit" formaction="pylucene">
+            <i class="glyphicon glyphicon-search"></i>
+            Pylucene Search
+          </button>
+        </div>
+      </div>
+    </form>
+
+    <br><br>
+      </div>
+    </div>
+  </body>
+</html>
